@@ -1,17 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_mysqldb import MySQL
-import re
+from flask import Flask, render_template, request, redirect, url_for
+from models import db, User
+from config import Config
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.config.from_object(Config)
 
-app.config['MYSQL_HOST'] = '154.49.142.103'
-app.config['MYSQL_USER'] = 'u392479182_BANCO24'
-app.config['MYSQL_PASSWORD'] = 'Base$&24' 
-app.config['MYSQL_DB'] = 'u392479182_BANCO'
-
-mysql = MySQL(app)
-
+db.init_app(app)
 @app.route('/')
 def index():
     return render_template('index.html')
