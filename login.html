@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Banco</title>
+    <style>
+        body {
+            background-color: #8B0000; /* Fondo guinda */
+            color: white; /* Letras blancas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background-color: #4d0000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a9c3f701-f08b-4500-a3ef-8a548d833cfe/daal8dy-79ab3840-cf74-47f9-8cd7-f19649cbd16a.png/v1/fill/w_1600,h_1642/ipn_burrificado_by_shiragaza_daal8dy-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY0MiIsInBhdGgiOiJcL2ZcL2E5YzNmNzAxLWYwOGItNDUwMC1hM2VmLThhNTQ4ZDgzM2NmZVwvZGFhbDhkeS03OWFiMzg0MC1jZjc0LTQ3ZjktOGNkNy1mMTk2NDljYmQxNmEucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Qdx0Kli97IHNM7abKbJ8-vPcgkVsZcJet7rPoLnHBB4" alt="Logo IPN">
+        <h1>Inicio de Sesión</h1>
+        <form method="post" action="{{ url_for('login') }}">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
