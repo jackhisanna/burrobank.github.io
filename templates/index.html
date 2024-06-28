@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BURROBANK</title>
+    <style>
+        body {
+            background-color: #6C2734;
+            font-family: Georgia, sans-serif;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .logo-ipn {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .burrito-img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #FFFFFF;
+            color: #6C2734;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        .button:hover {
+            background-color: #8E3C4E;
+            color: #FFFFFF;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .logo-ipn {
+                width: 60px;
+            }
+            .burrito-img {
+                width: 120px;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.esfm.ipn.mx/assets/files/esfm/img/ESCUDO_ESFM.png" class="logo-ipn">
+        <h1><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a9c3f701-f08b-4500-a3ef-8a548d833cfe/daal8dy-79ab3840-cf74-47f9-8cd7-f19649cbd16a.png/v1/fill/w_1600,h_1642/ipn_burrificado_by_shiragaza_daal8dy-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTY0MiIsInBhdGgiOiJcL2ZcL2E5YzNmNzAxLWYwOGItNDUwMC1hM2VmLThhNTQ4ZDgzM2NmZVwvZGFhbDhkeS03OWFiMzg0MC1jZjc0LTQ3ZjktOGNkNy1mMTk2NDljYmQxNmEucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Qdx0Kli97IHNM7abKbJ8-vPcgkVsZcJet7rPoLnHBB4" class="burrito-img"> BURROBANK</h1>
+        <div class="buttons">
+            <a href="{{ url_for('nuevos_clientes') }}" class="button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#6C2734" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6zm-1-10c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/></svg>
+                Nuevos Clientes
+            </a>
+            <a href="https://esfmcube.com/login.html" class="button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#6C2734" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6zm-1-10c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/></svg>
+                Historial del cliente
+            </a>
+            <a href="{{ url_for('eliminar_cliente') }}" class="button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#6C2734" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6zm-1-10c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/></svg>
+                Eliminar Cliente
+            </a>
+        </div>
+    </div>
+</body>
+</html>
